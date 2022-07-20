@@ -1,10 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app-deployment
+  name: db-deployment
   namespace: nscott
   labels:
-    app: app
+    app: db
 spec:
   replicas: 1
   strategy:
@@ -12,17 +12,17 @@ spec:
   minReadySeconds: 20
   selector:
     matchLabels:
-      app: app
+      app: db
   template:
     metadata:
       labels:
-        app: app
+        app: db
     spec:
       containers:
       - envFrom:
         - secretRef:
             name: db-secret
-        name: app-deployment
-        image: harbor.dev.afsmtddso.com/nscott-harbor-project/app@sha256:e1d5f872d5dde9ad1932fe8d3375e4001be4879e66f9938178a40afb409c95a9
+        name: db-deployment
+        image: harbor.dev.afsmtddso.com/nscott-harbor-project/db@sha256:7daae788b4eeb2ff11603abd5d79d928c1662a336264ffc133f76cb23f586ee4
         ports:
-        - containerPort: 5000
+        - containerPort: 5432
