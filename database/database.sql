@@ -1,4 +1,4 @@
---
+-- Lab 6 comment by Nadiya
 -- PostgreSQL database dump
 --
 
