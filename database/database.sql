@@ -1,4 +1,4 @@
--- Lab 6 comment by Nadiya
+-- Lab 6 comment by Nadiya!
 -- PostgreSQL database dump
 
 -- Dumped from database version 9.5.4
